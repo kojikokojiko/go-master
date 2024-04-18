@@ -10,8 +10,9 @@ const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 var r = rand.New(rand.NewSource(time.Now().UnixNano()))
 
-func RandomInt() int {
-	return r.Int()
+// RandomInt generates a random integer between min and max
+func RandomInt(min, max int64) int64 {
+	return min + rand.Int63n(max-min+1)
 }
 
 func RandomString(length int) string {
